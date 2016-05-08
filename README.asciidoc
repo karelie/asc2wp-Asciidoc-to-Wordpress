@@ -1,32 +1,51 @@
 = asc2wp
+
 Asc2wp is Asciidoc format file base post solution for Wordpress.
 
-- Initialize : Make setting file (setting.yaml).
+
+== Requirement
+
+- Asciidoctor
+- python-wordpress-xmlrpc
+- pyyaml
+
+== Installation
+
+You can install the Asc2wp using the +pip+ command:
+
+[source,bash]
+----
+$ pip install asc2wp
+----
+
+== Usage
+
+Initialize : Make setting file (setting.yaml).
 
 [source,bash]
 ----
 $ asc2wp init
 ----
 
-- Template file : Make Post type or Page type Template file.
+Make template file : Make Post type or Page type Template file.
 
 [source,bash]
 ----
 $ asc2wp makefile
 ----
 
-- Post to Wordpress
+Post to Wordpress
 
 [source,bash]
 ----
-$ asc2wp {asciidoc-files}
+$ asc2wp [asciidoc-files]
 ----
 
-- Media Upload
+Media Upload
 
 [source,bash]
 ----
-$ asc2wp -m {image-files}
+$ asc2wp -m [image-files]
 ----
 
 
