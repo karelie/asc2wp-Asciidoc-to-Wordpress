@@ -46,7 +46,7 @@ You can also use wild card.
 [source,bash]
 .Example
 ----
-$ asc2wp 2016-05-*.ascdoc
+$ asc2wp 2016-05-*.adoc
 ----
 
 Media Upload
