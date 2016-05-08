@@ -1,2 +1,18 @@
 # asc2wp
 Asc2wp is Asciidoc format file base post solution for Wordpress.
+
+- Initialize : Make setting file (setting.yaml).
+
+$ asc2wp init
+
+- Template file : Make Post type or Page type Template file.
+
+$ asc2wp makefile
+
+- Post to Wordpress
+
+$ asc2wp {asciidoc-files}
+
+- Media Upload
+
+$ asc2wp -m {image-files}
