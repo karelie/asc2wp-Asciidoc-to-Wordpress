@@ -10,12 +10,23 @@ $ asc2wp init
 
 - Template file : Make Post type or Page type Template file.
 
+[source,bash]
+----
 $ asc2wp makefile
+----
 
 - Post to Wordpress
 
+[source,bash]
+----
 $ asc2wp {asciidoc-files}
+----
 
 - Media Upload
 
+[source,bash]
+----
 $ asc2wp -m {image-files}
+----
+
+
