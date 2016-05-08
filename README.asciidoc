@@ -38,14 +38,28 @@ Post to Wordpress
 
 [source,bash]
 ----
-$ asc2wp [asciidoc-files]
+$ asc2wp <asciidoc-files>
+----
+
+You can also use wild card.
+
+[source,bash]
+.Example
+----
+$ asc2wp 2016-05-*.ascdoc
 ----
 
 Media Upload
 
 [source,bash]
 ----
-$ asc2wp -m [image-files]
+$ asc2wp -m <image-files>
 ----
 
+You can also use wild card.
 
+[source,bash]
+.Example
+----
+$ asc2wp -m /images/*.jpg
+----
