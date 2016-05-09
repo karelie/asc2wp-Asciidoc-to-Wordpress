@@ -21,6 +21,7 @@ $ pip install asc2wp
 == Usage
 
 - Initialize
+
 Make setting file (setting.yaml).
 
 [source,bash]
