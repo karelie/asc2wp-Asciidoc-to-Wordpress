@@ -20,21 +20,23 @@ $ pip install asc2wp
 
 == Usage
 
-Initialize : Make setting file (setting.yaml).
+- Initialize
+Make setting file (setting.yaml).
 
 [source,bash]
 ----
 $ asc2wp init
 ----
 
-Make template file : Make Post type or Page type Template file.
+- Make template file 
+Make Post type or Page type Template file.
 
 [source,bash]
 ----
 $ asc2wp makefile
 ----
 
-Post to Wordpress
+- Post to Wordpress
 
 [source,bash]
 ----
@@ -49,7 +51,7 @@ You can also use wild card.
 $ asc2wp 2016-05-*.adoc
 ----
 
-Media Upload
+- Media Upload
 
 [source,bash]
 ----
