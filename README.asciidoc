@@ -31,10 +31,10 @@ $ asc2wp init
 
 [source,yaml]
 ----
-url: 
-xmlrpc_url: 
-username: 
-password: 
+url\: 
+xmlrpc_url\: 
+username\: 
+password\: 
 ---
 
 Please write your informations.
