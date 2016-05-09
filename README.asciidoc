@@ -30,6 +30,7 @@ $ asc2wp init
 ----
 
 - Make template file 
+
 Make Post type or Page type Template file.
 
 [source,bash]
