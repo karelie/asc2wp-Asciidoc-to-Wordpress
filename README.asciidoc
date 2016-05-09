@@ -29,6 +29,14 @@ Make setting file (setting.yaml).
 $ asc2wp init
 ----
 
+[source,yaml]
+----
+url: 
+xmlrpc_url: 
+username: 
+password: 
+---
+
 - Make template file 
 
 Make Post type or Page type Template file.
