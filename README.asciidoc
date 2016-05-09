@@ -37,6 +37,8 @@ username:
 password: 
 ---
 
+Please write your informations.
+
 - Make template file 
 
 Make Post type or Page type Template file.
