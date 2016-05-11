@@ -50,6 +50,7 @@ $ asc2wp makefile
 
 The extension will be added automatically. (.adoc)
 
+.Example
 ....
 :wp_type: post 
 :wp_status: publish ( draft / private / pending / publish )
