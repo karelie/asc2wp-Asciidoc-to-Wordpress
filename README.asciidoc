@@ -69,8 +69,8 @@ The extension will be added automatically. (.adoc)
 //asciidoc contents
 ....
 
-You can also use Asciidoctor Document headers.
-If you have new posts, posts id's will be added after ":wp_id: ".
+You can also use Asciidoctor Document headers. +
+If you have new posts, posts id's will be added after ":wp_id: ". +
 So, If already have id's in the file, it is treated as editing post.
 
 - Post to Wordpress
@@ -88,6 +88,9 @@ You can also use wild card.
 $ asc2wp 2016-05-*.adoc
 ----
 
+After upload, displayed Post informations on console.
+
+
 - Media Upload
 
 [source,bash]
@@ -102,3 +105,5 @@ You can also use wild card.
 ----
 $ asc2wp -m /images/*.jpg
 ----
+
+After upload, displayed attachments ID and file name and file's URL on console.
