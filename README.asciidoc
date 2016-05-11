@@ -39,7 +39,7 @@ password: admin
 Please write your informations.
 Don't use "https://", Please write "http://".
 
-- Make template file 
+=== Make template file 
 
 Make Post type or Page type Template file.
 
