@@ -20,7 +20,7 @@ $ pip install asc2wp
 
 == Usage
 
-- Initialize
+=== Initialize
 
 Make setting file (setting.yaml).
 
@@ -73,7 +73,7 @@ You can also use Asciidoctor Document headers. +
 If you have new posts, posts id's will be added after ":wp_id: ". +
 So, If already have id's in the file, it is treated as editing post.
 
-- Post to Wordpress
+=== Post to Wordpress
 
 [source,bash]
 ----
@@ -91,7 +91,7 @@ $ asc2wp 2016-05-*.adoc
 After upload, displayed Post informations on console.
 
 
-- Media Upload
+=== Media Upload
 
 [source,bash]
 ----
