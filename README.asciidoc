@@ -37,6 +37,7 @@ password: admin
 ....
 
 Please write your informations.
+Don't use "https://", Please write "http://".
 
 - Make template file 
 
@@ -62,8 +63,13 @@ The extension will be added automatically. (.adoc)
 :wp_excerpt: 
 :wp_thumbnail: (input attachments id)
 
+:toc:
+:imagesdir: https://abcdefg.abc/wp-content/uploads/
+
 //asciidoc contents
 ....
+
+You can also use Asciidoctor Document headers.
 
 - Post to Wordpress
 
