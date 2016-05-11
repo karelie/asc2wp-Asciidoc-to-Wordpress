@@ -29,6 +29,7 @@ Make setting file (setting.yaml).
 $ asc2wp init
 ----
 
+.Example
 ....
 url: http://abcdefg.abc
 xmlrpc_url: http://abcdefg.abc/xmlrpc.php
