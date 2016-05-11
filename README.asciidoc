@@ -29,6 +29,13 @@ Make setting file (setting.yaml).
 $ asc2wp init
 ----
 
+....
+url: http://abcdefg.abc
+xmlrpc_url: http://abcdefg.abc/xmlrpc.php
+username: admin
+password: admin
+....
+
 Please write your informations.
 
 - Make template file 
