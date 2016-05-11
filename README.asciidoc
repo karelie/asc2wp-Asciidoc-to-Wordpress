@@ -47,11 +47,29 @@ Make Post type or Page type Template file.
 $ asc2wp makefile
 ----
 
+The extension will be added automatically. (.adoc)
+
+....
+:wp_type: post 
+:wp_status: publish ( draft / private / pending / publish )
+:wp_date: (automatically)
+:wp_modified: (automatically)
+:wp_id: (automatically)
+:wp_title: 
+:wp_slug: 
+:wp_category: cat1, cat2, cat3 (separated by commas)
+:wp_tag: tag1, tag2, tag3 (separated by commas)
+:wp_excerpt: 
+:wp_thumbnail: (input attachments id)
+
+//asciidoc contents
+....
+
 - Post to Wordpress
 
 [source,bash]
 ----
-$ asc2wp <asciidoc-files>
+$ asc2wp {asciidoc-files}
 ----
 
 You can also use wild card.
@@ -66,7 +84,7 @@ $ asc2wp 2016-05-*.adoc
 
 [source,bash]
 ----
-$ asc2wp -m <image-files>
+$ asc2wp -m {image-files}
 ----
 
 You can also use wild card.
