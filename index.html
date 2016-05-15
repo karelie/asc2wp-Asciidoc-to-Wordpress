@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Asc2wp-asciidoc-to-wordpress by sminamie</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Asc2wp-asciidoc-to-wordpress</h1>
+        <p>Asc2wp is Asciidoc format file base post solution for Wordpress.</p>
+
+        <p class="view"><a href="https://github.com/sminamie/asc2wp-Asciidoc-to-Wordpress">View the Project on GitHub <small>sminamie/asc2wp-Asciidoc-to-Wordpress</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sminamie/asc2wp-Asciidoc-to-Wordpress/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sminamie/asc2wp-Asciidoc-to-Wordpress/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sminamie/asc2wp-Asciidoc-to-Wordpress">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p> <h1>
+<a id="asc2wp" class="anchor" href="#asc2wp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-asc2wp" href="#asc2wp"></a>asc2wp</h1> </p>
+
+<div id="user-content-preamble">
+<div>
+<div>
+<p>Asc2wp is Asciidoc format file base post solution for Wordpress.</p>
+</div>
+
+<p></p>
+</div>
+</div>
+
+<div>
+<h2 id="user-content-requirement">
+<a id="requirement" class="anchor" href="#requirement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-requirement" href="#requirement"></a>Requirement</h2>
+<div>
+<div>
+<ul>
+<li>
+<p>Asciidoctor</p>
+</li>
+<li>
+<p>python-wordpress-xmlrpc</p>
+</li>
+<li>
+<p>pyyaml</p>
+</li>
+</ul>
+</div>
+
+<p></p>
+</div>
+</div>
+
+<div>
+<h2 id="user-content-installation">
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-installation" href="#installation"></a>Installation</h2>
+<div>
+<div>
+<p>You can install the Asc2wp using the pip command:</p>
+</div>
+
+<div>
+<div>
+<div><pre>$ pip install asc2wp</pre></div>
+</div>
+
+<p></p>
+</div>
+</div>
+</div>
+
+<div>
+<h2 id="user-content-usage">
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-usage" href="#usage"></a>Usage</h2>
+<div>
+<div>
+<h3 id="user-content-initialize">
+<a id="initialize" class="anchor" href="#initialize" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-initialize" href="#initialize"></a>Initialize</h3>
+<div>
+<p>Make setting file (setting.yaml).</p>
+</div>
+
+<div>
+<div>
+<div><pre>$ asc2wp init</pre></div>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<div>Example</div>
+<div>
+<pre>url: http://abcdefg.abc
+xmlrpc_url: http://abcdefg.abc/xmlrpc.php
+username: admin
+password: admin
+remove_div: False
+remove_p: False
+remove_p_tableblock: False</pre>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>Please write your informations.<br>
+Don’t use "https://", Please write "http://".<br></p>
+</div>
+
+<div>
+<h4 id="user-content-options">
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-options" href="#options"></a>Options</h4>
+<div>
+<ul>
+<li>
+<p>remove_div</p>
+</li>
+<li>
+<p>remove_p</p>
+</li>
+<li>
+<p>remove_p_tableblock</p>
+</li>
+</ul>
+</div>
+
+<div>
+<p>Can you remove DIV, P tags. If you want these tags, please input "True". Default setteing is "Fales".</p>
+</div>
+
+<p></p>
+</div>
+</div>
+
+<div>
+<h3 id="user-content-make-template-file">
+<a id="make-template-file" class="anchor" href="#make-template-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-make-template-file" href="#make-template-file"></a>Make template file</h3>
+<div>
+<p>Make Post type or Page type Template file.</p>
+</div>
+
+<div>
+<div>
+<div><pre>$ asc2wp makefile</pre></div>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>The extension will be added automatically. (.adoc)</p>
+</div>
+
+<div>
+<div>Example</div>
+<div>
+<pre>:wp_type: post
+:wp_status: publish ( draft / private / pending / publish )
+:wp_date: (automatically)
+:wp_modified: (automatically)
+:wp_id: (automatically)
+:wp_title:
+:wp_slug:
+:wp_category: cat1, cat2, cat3 (separated by commas)
+:wp_tag: tag1, tag2, tag3 (separated by commas)
+:wp_excerpt:
+:wp_thumbnail: (input attachments id)
+
+:toc:
+:imagesdir: https://abcdefg.abc/wp-content/uploads/
+
+//asciidoc contents</pre>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>You can also use Asciidoctor Document headers.<br>
+If you have new posts, posts id’s will be added after ":wp_id: ".<br>
+So, If already have id’s in the file, it is treated as editing post.</p>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<h3 id="user-content-post-to-wordpress">
+<a id="post-to-wordpress" class="anchor" href="#post-to-wordpress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-post-to-wordpress" href="#post-to-wordpress"></a>Post to Wordpress</h3>
+<div>
+<div>
+<div><pre>$ asc2wp {asciidoc-files}</pre></div>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>You can also use wild card.</p>
+</div>
+
+<div>
+<div>Example</div>
+<div>
+<div><pre>$ asc2wp 2016-05-*.adoc</pre></div>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>After upload, displayed Post informations on console.</p>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<h3 id="user-content-media-upload">
+<a id="media-upload" class="anchor" href="#media-upload" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a id="user-content-media-upload" href="#media-upload"></a>Media Upload</h3>
+<div>
+<div>
+<div><pre>$ asc2wp -m {image-files}</pre></div>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>You can also use wild card.</p>
+</div>
+
+<div>
+<div>Example</div>
+<div>
+<div><pre>$ asc2wp -m /images/*.jpg</pre></div>
+</div>
+
+<p></p>
+</div>
+
+<div>
+<p>After upload, displayed attachments ID and file name and file’s URL on console.</p>
+</div>
+
+<p></p>
+</div>
+</div>
+</div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sminamie">sminamie</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
