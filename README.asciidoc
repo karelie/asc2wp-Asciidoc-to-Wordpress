@@ -41,8 +41,8 @@ remove_p_tableblock: False
 ....
 
 Please write your informations. +
-Don't use "https://", Please write "http://". +
-Options:::
+Don't use "https://", Please write "http://".
+Options::
  . remove_div
  . remove_p
  . remove_p_tableblock
