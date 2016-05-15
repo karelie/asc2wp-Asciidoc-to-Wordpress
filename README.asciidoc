@@ -35,12 +35,20 @@ url: http://abcdefg.abc
 xmlrpc_url: http://abcdefg.abc/xmlrpc.php
 username: admin
 password: admin
+remove_div: False
+remove_p: False
+remove_p_tableblock: False
 ....
 
-Please write your informations.
-Don't use "https://", Please write "http://".
+Please write your informations. +
+Don't use "https://", Please write "http://". +
+Options:::
+ . remove_div
+ . remove_p
+ . remove_p_tableblock
+ Can you remove DIV, P tags. If you want these tags, please input "True". Default setteing is "Fales".
 
-=== Make template file 
+=== Make template file
 
 Make Post type or Page type Template file.
 
@@ -53,16 +61,16 @@ The extension will be added automatically. (.adoc)
 
 .Example
 ....
-:wp_type: post 
+:wp_type: post
 :wp_status: publish ( draft / private / pending / publish )
 :wp_date: (automatically)
 :wp_modified: (automatically)
 :wp_id: (automatically)
-:wp_title: 
-:wp_slug: 
+:wp_title:
+:wp_slug:
 :wp_category: cat1, cat2, cat3 (separated by commas)
 :wp_tag: tag1, tag2, tag3 (separated by commas)
-:wp_excerpt: 
+:wp_excerpt:
 :wp_thumbnail: (input attachments id)
 
 :toc:
