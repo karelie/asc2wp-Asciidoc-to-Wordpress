@@ -33,7 +33,7 @@ class asc2wp:
 			sys.exit(0) # quit Python
 		else:
 			file_name = 'setting.yaml'
-			setting_file_content = "url: \nxmlrpc_url: \nusername: \npassword: \n"
+			setting_file_content = "url: \nxmlrpc_url: \nusername: \npassword: \nremove_div: False\nremove_p: False\nremove_p_tableblock: False\n"
 			setting_file = open(file_name,'a')   # Trying to create a new file or open one
 			setting_file.write(setting_file_content)
 			setting_file.close()
@@ -55,6 +55,21 @@ class asc2wp:
 			username = data['username'] 
 			global password
 			password = data['password'] 
+			global remove_div
+			try:
+				remove_div = data["remove_div"]
+			except KeyError:
+				remove_div = False
+			global remove_p
+			try:
+				remove_p = data["remove_p"]
+			except KeyError:
+				remove_p = False
+			global remove_p_tableblock
+			try:
+				remove_p_tableblock = data["remove_p_tableblock"]
+			except KeyError:
+				remove_p_tableblock = False
 
 	def make_new_file():
 		print('Creat new template file')
@@ -137,8 +152,16 @@ class asc2wp:
 			# print cmd
 			subprocess.call( cmd, shell=True  )
 
-			cmd1 = "cat -s " + dirname_output + filename + ".html | sed -e 's/<p class=\\\"tableblock\\\">\(.*\)<\/p>/\\1/g' | sed '/^$/d'"
-			# cmd1 = "cat -s " + dirname_output + filename + ".html | sed -e 's/<p class=\\\"table\\\">\(.*\)<\/p>/\\1/g' | sed '/^$/d'"
+			cmd1 = "cat -s " + dirname_output + filename + ".html"
+
+			if remove_div == True:
+				cmd1 = cmd1 + " | sed -e 's/<div [^>]*>//g' | sed -e 's/<\/div>//g'"
+			if remove_p == True:
+				cmd1 = cmd1 + " | sed -e 's/<p>//g' | sed -e 's/<p [^>]*>//g' | sed -e 's/<\/p>//g'"
+			if remove_p_tableblock == True:
+				cmd1 = cmd1 + " | sed -e 's/<p class=\\\"tableblock\\\">\(.*\)<\/p>/\\1/g'"
+			cmd1 = cmd1 + " | sed '/^$/d'"
+
 			global html
 			html = subprocess.check_output( cmd1, shell=True  )
 
