@@ -48,7 +48,7 @@ Don't use "https://", Please write "http://". +
  * remove_p
  * remove_p_tableblock
 
-Can you remove DIV, P tags. If you want these tags, please input "True". Default setteing is "Fales".
+Can you remove DIV, P tags. If you want these tags, please input "True". Default setting is "False".
 
 === Make template file
 
