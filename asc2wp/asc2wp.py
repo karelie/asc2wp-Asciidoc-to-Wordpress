@@ -21,19 +21,41 @@ class Asc2wp:
     """
     methods:
     asciidoctor_check
+        + checks if asciidoctor is installed
     argv_check
+        + checks if there is input supplied
     make_setting_file
+        + will create a blank settings file for modification
     read_setting_file
+        + will load the settings for transfer and file modification
     make_new_file
+        + make a template file for
+        you to edit or use for
+        creation of new adoc files
     media_upload
+        + takes a list of files that
+        need submission and it
+        will send them to wordppess
     basic_process
+        + start the processing of the
+        adoc files
     timezone
+        + get the timezone from the
+        sever to know when a document
+        has been submitted
     printhelp
+        + just to output the help
+        info for the system
     post_type
+        + check if post or page
+        needed for creation in
+        wordpress
     post
+        + read and submit details
+        for a post
     page
-
-    NOTE to fill out all details how and why
+        + read and submit details
+        for a page
 
     """
 
@@ -54,7 +76,7 @@ class Asc2wp:
 
     def asciidoctor_check(self):
         """
-        check if Asciidoctor is alreday installed to convert the adoc to html
+        check if Asciidoctor alreday installed to convert the adoc to html
         """
         if (distutils.spawn.find_executable("asciidoctor")) is None:
             print(
@@ -112,7 +134,7 @@ class Asc2wp:
     def read_setting_file(self):
         """
         read the settings file and setup the variables
-        NOTE: not the best as password is loaded as a global :(
+        NOTE: not the best as password loaded as a global :(
         should also allow for input if not saved in settings file
         """
         setting_yaml_file = "setting.yaml"
@@ -304,7 +326,8 @@ class Asc2wp:
 
     def timezone(self):
         """
-        get the wprdpress timezone to adjust the local time to the wordpress time.
+        get the wprdpress timezone to adjust the local time
+        to the wordpress time.
         """
         from wordpress_xmlrpc import Client, WordPressOption
         from wordpress_xmlrpc.methods import options
