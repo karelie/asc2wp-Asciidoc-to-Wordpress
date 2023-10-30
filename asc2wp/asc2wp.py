@@ -13,8 +13,10 @@ import subprocess
 import sys
 import time
 from datetime import datetime
+from io import StringIO
 
 import yaml
+from PythonSed import Sed, SedException
 
 
 class Asc2wp:
@@ -298,28 +300,50 @@ class Asc2wp:
                 + ".html"
             )
             subprocess.call(cmd, shell=True)
+            sed = Sed()
 
-            cmd1 = "cat -s " + dirname_output + filename + ".html"
+            #cmd1 = "cat -s " + dirname_output + filename + ".html"
+            sed_file_in = dirname_output + filename + ".html"
 
             if remove_div is True:
-                cmd1 = cmd1 + " | sed -e 's/<div [^>]*>//g' | sed -e 's/<\/div>//g'"
+                #cmd1 = cmd1 + " | sed -e 's/<div [^>]*>//g' | sed -e 's/<\/div>//g'"
+                sed.load_string("s/<div [^>]*>//g")
+                sed.load_string("s/<\/div>//g")
             if remove_p is True:
-                cmd1 = (
-                    cmd1
-                    + " | sed -e 's/<p>//g' | sed -e 's/<p [^>]*>//g' | sed -e 's/<\/p>//g'"
-                )
+                #cmd1 = (
+                #    cmd1
+                #    + " | sed -e 's/<p>//g' | sed -e 's/<p [^>]*>//g' | sed -e 's/<\/p>//g'"
+                #)
+                sed.load_string("s/<p>//g")
+                sed.load_string("s/<p [^>]*>//g")
+                sed.load_string("s/<\/p>//g")
             if remove_p_tableblock is True:
-                cmd1 = (
-                    cmd1
-                    + " | sed -e 's/<p "
-                    + 'class=\\"tableblock\\">\(.*\)<\/p>/\\1/g\''
-                )
-            cmd1 = cmd1 + " | sed '/^$/d'"
+                #cmd1 = (
+                #    cmd1
+                #    + " | sed -e 's/<p "
+                #    + 'class=\\"tableblock\\">\(.*\)<\/p>/\\1/g\''
+                #)
+                sed.load_string('s/<p class=\\"tableblock\\">\(.*\)<\/p>/\\1/g')
+            #cmd1 = cmd1 + " | sed '/^$/d'"
+            sed.load_string("/^$/d")
 
             global html
-            html = subprocess.check_output(cmd1, shell=True)
-
+            #htmlold = subprocess.check_output(cmd1, shell=True)
+            sed_string = "testing"
+            sed_file_out = StringIO(sed_string)
+            sed_file_out.seek(0)
+            try:
+                sed.no_autoprint = False
+                sed.regexp_extended = False
+                sed_file_in = dirname_output + filename + ".html"
+                sed.apply(sed_file_in, output=sed_file_out)
+            except SedException as e:
+                print(e.message)
+            except:
+                raise
             # get post info from asciidoc file
+            sed_file_out.seek(0)
+            html = sed_file_out.read()
             with open(filepath, "r") as asc_file_read:
                 global asc_file_read_str
                 asc_file_read_str = asc_file_read.read()
